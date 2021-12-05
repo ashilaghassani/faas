@@ -23,7 +23,7 @@ export default function Blog(props) {
             </div>
 
             {blog.map((content)=>{
-                return <ul><li><a href= {content.link} > {content.link}</a></li></ul>
+                return <ul><li><p> {content.title}</p></li></ul>
             })}
          
 

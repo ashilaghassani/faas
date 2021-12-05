@@ -9,7 +9,7 @@ const blog = async ()=>{
         () => Array.from(
           document.querySelectorAll('article')
         ).map(content => ({
-            link : content.querySelector('a').href
+            title : content.querySelector('h1').innerText.trim()
         }))
     );
 
