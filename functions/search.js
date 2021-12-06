@@ -9,18 +9,22 @@ exports.handler = async (event) => {
     {
       method: 'GET',
       headers: {
-        Authorization: `Client-ID ${process.env.UNSPLASH_API_TOKEN}`,
+        Authorization: "Client-ID QIjMG3n_vl_qjK6iHpbWnGGq2WKOxYNIHC7h7AKAnCM",
       },
     }
   )
   .then((response) => response.json())
   .catch((error) => console.error(error));
+
+  const result = response.results[0];
+
   return {
     statusCode: 200,
     headers: {
-      'Content-Type': 'application/json',
+      'Content-Type': 'text/html',
     },
-    body: JSON.stringify({ query }),
-    body: JSON.stringify(response),
+    body: `<img 
+        src="${result.urls.regular}"
+    />`,
   };
 };
