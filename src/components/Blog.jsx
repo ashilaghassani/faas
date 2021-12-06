@@ -6,7 +6,7 @@ import { useEffect } from 'react';
 export default function Blog(props) {
     const [blog,setBlog] = useState([])
     const fetchData = async()=>{
-        const data = await axios.get('/.netlify/functions/scrapping') 
+        const data = await axios.get('/.netlify/functions/fetch') 
         console.log(data.data)
         setBlog(data.data)
     }
@@ -23,7 +23,7 @@ export default function Blog(props) {
             </div>
 
             {blog.map((content)=>{
-                return <ul><li><p> {content.title}</p></li></ul>
+                return <ul><li><p>{content.text} </p></li></ul>
             })}
          
 
