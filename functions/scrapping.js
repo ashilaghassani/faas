@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 const blog = async ()=>{
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    await page.goto('https://ashilaghassani99.medium.com/');
+    await page.goto('https://ashilaghassani99.medium.com/team-dynamics-4c5f230d79e');
 
     const test = await page.evaluate(
         () => Array.from(
