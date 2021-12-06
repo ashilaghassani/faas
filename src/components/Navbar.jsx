@@ -17,8 +17,8 @@ const Navbar = (props) => {
         <NavLink to='/home' activeStyle>
             Home
         </NavLink>
-        <NavLink to='/blog' activeStyle>
-            My Blog
+        <NavLink to='/fetch' activeStyle>
+            My Fetch API
         </NavLink>
         <NavLink to='/image' activeStyle>
             My Image

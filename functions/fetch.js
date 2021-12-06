@@ -42,21 +42,11 @@
 // exports.handler = blog;
 
 const fetch = require('node-fetch');
-
-const API_ENDPOINT = "https://cat-fact.herokuapp.com/facts";
-
-const checkStatus = (res) => {
-    if (res.ok) { // res.status >= 200 && res.status < 300
-        return res.json()
-    } else {
-        throw new Error(res.statusText);
-    }
-  }
   
-  exports.handler = async function(event, context, callback) {
+exports.handler = async function(event, context, callback) {
     try {
       const response = await fetch('https://cat-fact.herokuapp.com/facts')
-      const data = await checkStatus(response)
+      const data = await response.json()
       callback(null, {
         statusCode: 200,
         headers: { 'Content-Type': 'application/json' },
@@ -65,4 +55,4 @@ const checkStatus = (res) => {
     } catch (error) {
       callback(error)
     }
-  }
+}

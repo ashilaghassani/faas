@@ -4,11 +4,11 @@ import { useEffect } from 'react';
 
 
 export default function Blog(props) {
-    const [blog,setBlog] = useState([])
+    const [fetch,setFetch] = useState([])
     const fetchData = async()=>{
         const data = await axios.get('/.netlify/functions/fetch') 
         console.log(data.data)
-        setBlog(data.data)
+        setFetch(data.data)
     }
 
     useEffect(()=>{
@@ -19,10 +19,10 @@ export default function Blog(props) {
         <div className="blog">
             <div class = "title">
                 
-                <h1> My Blog</h1>
+                <h1> Fetch Api</h1>
             </div>
 
-            {blog.map((content)=>{
+            {fetch.map((content)=>{
                 return <ul><li><p>{content.text} </p></li></ul>
             })}
          
