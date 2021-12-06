@@ -14,9 +14,6 @@ exports.handler = async (event) => {
     }
   )
   .then((response) => response.json())
-  .catch((error) => console.error(error));
-
-  const result = response.results[0];
 
   return {
     statusCode: 200,
@@ -24,7 +21,7 @@ exports.handler = async (event) => {
       'Content-Type': 'text/html',
     },
     body: `<img 
-        src="${result.urls.regular}"
+        src="${ response.results[0].urls.regular}"
     />`,
   };
 };
