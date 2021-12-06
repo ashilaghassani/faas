@@ -8,6 +8,17 @@
 # testing
 /coverage
 
+
+.env
+
+.netlify
+
+
+dist/
+
+.cache
+
+
 # production
 /build
 
